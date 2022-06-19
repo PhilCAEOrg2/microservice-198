@@ -132,13 +132,13 @@ public class ResTest {
       ClientResponse result = c.sendRequest("GET", "/test", """
 """, "text/plain", "*/*", new HashMap<>(), new Object[0]);
       System.out.println("Result of request with id: 443543: " + result.getResponse().trim());
-    
-      Assert.assertEquals("[907118]", 200, result.getHttpCode());
-  Object response = JSONValue.parse(result.getResponse().trim());
+      Object response = JSONValue.parse(result.getResponse().trim());
       // Response body has type Item
       assertThat("[722153]", response, both(isA(JSONObject.class)).and(asJSONObject(followsSchema("Item", """
       {"type":"object","properties":{"name":{"type":"string"},"id":{"format":"int32","type":"integer"}},"required":["name","id"]}"""))));
       
+
+      Assert.assertEquals("[907118]", 200, result.getHttpCode());
 
     } catch (Exception e) {
       e.printStackTrace();

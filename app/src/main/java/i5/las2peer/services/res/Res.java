@@ -126,6 +126,49 @@ public class Res extends RESTService {
     return null;
   }
 
+  /**
+   * 
+   * gettest2
+   *
+   * 
+   *
+   * 
+   * @return Response 
+   * 
+   */
+  @GET
+  @Path("/abc/{id}/name")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "res")
+  })
+  @ApiOperation(value = "gettest2", notes = " ")
+  public Response gettest2() {
+
+
+
+
+     
+    // service method invocations
+
+     
+
+
+
+
+    // res
+    boolean res_condition = true;
+    if(res_condition) {
+      JSONObject res = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_OK).entity(res.toJSONString()).build();
+    }
+    return null;
+  }
+
 
 
   }
